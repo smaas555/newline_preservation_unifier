@@ -1,6 +1,6 @@
 [project]
 name = "newline-preservation-unifier"
-version = "0.1.0"
+version = "0.1.1"
 description = "Collapses mixed CR, LF, and CRLF line endings within a single document to a consistent style while recording original line-ending offsets for mapping."
 requires-python = ">=3.10"
 dependencies = []
