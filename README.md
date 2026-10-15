@@ -40,3 +40,10 @@ The unifier scans once, special-cases CRLF so a CR immediately followed by LF is
 - `src/newline_preservation_unifier/core.py` holds the implementation. `LineEndingOffset` is also exported from `core` for callers who need the type for annotations.
 
 Run the tests with `PYTHONPATH=src python -m unittest discover -s tests`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
